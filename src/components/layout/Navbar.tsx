@@ -20,22 +20,32 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-         ? "bg-white/90 backdrop-blur-md shadow-md"
-  : "bg-transparent"
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-[#373643]">SejourHouse</div>
+        <div
+          className={`text-2xl font-bold transition-colors duration-300 ${
+            scrolled ? "text-[#373643]" : "text-white"
+          }`}
+        >
+          SejourHouse
+        </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-[#373643] font-medium">
-          {['Home', 'Amenities', 'Gallery', 'Reviews', 'Contact'].map((item) => (
+        <div
+          className={`hidden md:flex space-x-8 font-medium transition-colors duration-300 ${
+            scrolled ? "text-[#373643]" : "text-white"
+          }`}
+        >
+          {["Home", "Amenities", "Gallery", "Reviews", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="hover:text-[#18cb96] transition-colors duration-200"
+              className={`hover:text-[#18cb96] transition-colors duration-200`}
             >
               {item}
             </a>
@@ -43,20 +53,20 @@ export default function Navbar() {
         </div>
 
         {/* Book Now Button */}
-        <a
-          href="#"
-          className="hidden md:inline-block bg-[#18cb96] text-white font-semibold px-5 py-2 rounded-full hover:opacity-90 transition"
-        >
-          Book Now
-        </a>
+       <a
+  href="#"
+  className="hidden md:inline-block bg-[#18cb96] text-white font-semibold px-5 py-2 rounded-full hover:opacity-90 transition"
+>
+  Book Now
+</a>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#373643] focus:outline-none"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+{/* Mobile Menu Button */}
+<button
+  onClick={() => setIsOpen(!isOpen)}
+  className="md:hidden text-[#373643] focus:outline-none"
+>
+  {isOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
       </div>
 
       {/* Mobile Menu */}
@@ -67,7 +77,7 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
           className="md:hidden bg-[#f9f9f9] shadow-inner px-6 py-4 space-y-4"
         >
-          {['Home', 'Amenities', 'Gallery', 'Reviews', 'Contact'].map((item) => (
+          {["Home", "Amenities", "Gallery", "Reviews", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
