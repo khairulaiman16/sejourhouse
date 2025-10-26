@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/Hero";
 import Amenities from "./components/amenities/Amenities";
@@ -11,14 +11,10 @@ import Availability from "./components/availability/Availability";
 import FeedbackPage from "./pages/FeedbackPage";
 import AdminFeedbackPage from "./pages/AdminFeedbackPage";
 
-// HomePage Component (your existing landing layout)
 function HomePage() {
   return (
     <div className="relative min-h-screen bg-gray-100">
-      {/* Navbar */}
       <Navbar />
-
-      {/* Hero Section */}
       <Hero />
       <Experience />
       <Availability />
@@ -31,21 +27,12 @@ function HomePage() {
   );
 }
 
-// Main App with Routing
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Main Landing Page */}
-        <Route path="/" element={<HomePage />} />
-
-        {/* Feedback Page */}
-        <Route path="/feedback" element={<FeedbackPage />} />
-
-        {/* AdminFeedback Page */}
-        <Route path="/admin-feedback" element={<AdminFeedbackPage />} />
-
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/feedback" element={<FeedbackPage />} />
+      <Route path="/admin-feedback" element={<AdminFeedbackPage />} />
+    </Routes>
   );
 }
