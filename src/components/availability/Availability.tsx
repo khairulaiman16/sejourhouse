@@ -147,7 +147,7 @@ export default function Availability() {
 
         {/* Book Button */}
         <motion.a
-          href="#"
+          href="https://wa.link/oaa7c6"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.2 }}

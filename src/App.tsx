@@ -10,6 +10,9 @@ import Experience from "./components/experience/Experience";
 import Availability from "./components/availability/Availability";
 import FeedbackPage from "./pages/FeedbackPage";
 import AdminFeedbackPage from "./pages/AdminFeedbackPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import { AnimatePresence } from "framer-motion";
+import PageTransition from "./components/layout/PageTransition";
 
 function HomePage() {
   return (
@@ -29,10 +32,15 @@ function HomePage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/feedback" element={<FeedbackPage />} />
-      <Route path="/admin-feedback" element={<AdminFeedbackPage />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <PageTransition key={location.pathname}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
+          <Route path="/admin-feedback" element={<AdminFeedbackPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </PageTransition>
+    </AnimatePresence>
   );
 }

@@ -54,7 +54,7 @@ export default function Navbar() {
 
         {/* Book Now Button */}
        <a
-  href="#"
+  href="https://wa.link/oaa7c6"
   className="hidden md:inline-block bg-[#18cb96] text-white font-semibold px-5 py-2 rounded-full hover:opacity-90 transition"
 >
   Book Now
@@ -88,7 +88,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#"
+            href="https://wa.link/oaa7c6"
             className="block text-center bg-[#18cb96] text-white font-semibold px-5 py-2 rounded-full hover:opacity-90 transition"
           >
             Book Now
