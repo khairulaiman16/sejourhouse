@@ -12,11 +12,14 @@ export default function Experience() {
           viewport={{ once: true }}
           className="rounded-2xl overflow-hidden shadow-lg"
         >
-          <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-            alt="SejourHouse interior"
-            className="w-full h-full object-cover"
-          />
+          <div className="relative w-full aspect-[4/3] md:aspect-[5/4] overflow-hidden">
+            <img
+              src="/images/livingroom.jpg" // 🔹 Replace this with your image
+              alt="SejourHouse interior"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </motion.div>
 
         {/* Right: Text Content */}
